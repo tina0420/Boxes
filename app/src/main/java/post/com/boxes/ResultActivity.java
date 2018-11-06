@@ -2,12 +2,12 @@ package post.com.boxes;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.widget.TextView;
 
-public class ResultActivity extends AppCompatActivity {
+import org.w3c.dom.Text;
 
-    private TextView box;
-    private TextView box1;
+public class ResultActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,19 +17,16 @@ public class ResultActivity extends AppCompatActivity {
         float width = getIntent().getFloatExtra("Width",0);
         float height = getIntent().getFloatExtra("Height",0);
         TextView box = findViewById(R.id.box);
-        TextView data = findViewById(R.id.data);
+        TextView dimension = findViewById(R.id.dimension);
         TextView price = findViewById(R.id.price);
-        if(length <=23 && width <= 14 && height<=13){
+        if(length <= 23 && width <= 14 && height <= 13){
             box.setText("BOX3");
-            data.setText("Dimention : "+ length +"/" + width +"/"+ height + "cm");
-            price.setText("Price : 65");
-        }else{
+            dimension.setText("Dimension: 23 / 14 / 13 cm");
+            price.setText("Price:65");
+        }else {
             box.setText("BOX5");
-            data.setText("Dimension : "+length + "/" + width + "/" + height + "cm");
-            price.setText("Price : 90");
+            dimension.setText("Dimension: 39.5 / 27.5 / 23 cm");
+            price.setText("Price:90");
         }
-
-
-
     }
 }
